@@ -1,4 +1,4 @@
-# frontend
+# Tienda
 
 ## Project setup
 ```
