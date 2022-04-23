@@ -1,11 +1,14 @@
 <template>
-  <h1>home</h1>
+  <Productos />
 </template>
 
 <script>
+import Productos from "@/components/Productos";
 export default {
   name: "Home",
-  components: {},
+  components: {
+    Productos,
+  },
 
   data: () => ({
     //

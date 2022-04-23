@@ -3,11 +3,12 @@
     <div class="d-flex align-center mr-15">
       <v-img
         alt="Sennova logo"
-        class="shrink mr-2"
+        class="shrink mr-2 btn"
         contain
         src="@/assets/logo.png"
         transition="scale-transition"
         width="60"
+        @click="irHome"
       />
       <v-card-title>TIENDA</v-card-title>
     </div>
@@ -20,3 +21,14 @@
     </v-avatar>
   </v-system-bar>
 </template>
+<script>
+export default {
+  name: "Menu",
+  data: () => ({}),
+  methods: {
+    irHome() {
+      this.$router.push("/");
+    },
+  },
+};
+</script>

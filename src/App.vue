@@ -2,22 +2,20 @@
   <v-app>
     <Menu />
     <MenuSuperior />
-    <Productos />
+    <v-main>
+      <router-view />
+    </v-main>
   </v-app>
 </template>
 
 <script>
-import Productos from "@/components/Productos.vue";
 import Menu from "@/components/Menu";
 import MenuSuperior from "@/components/MenuSuperior";
+
 export default {
   name: "App",
-
-  data: () => ({
-    //
-  }),
+  data: () => ({}),
   components: {
-    Productos,
     Menu,
     MenuSuperior,
   },
