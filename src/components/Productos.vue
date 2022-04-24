@@ -69,7 +69,7 @@ export default {
   methods: {
     async obtenerProductos() {
       await axios
-        .get(this.$api + "productos")
+        .get(this.$api + "productos/")
         .then((res) => {
           this.productos = res.data.data;
         })

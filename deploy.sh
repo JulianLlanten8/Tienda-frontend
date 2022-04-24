@@ -13,6 +13,8 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:https://github.com/JulianLlanten8/Tienda-frontend/.github.io.git main
+# if you are deploying to https://<USERNAME>.github.io
+git push -f https://github.com/JulianLlanten8/Tienda-frontend.git master:gh-pages
+
 
 cd -

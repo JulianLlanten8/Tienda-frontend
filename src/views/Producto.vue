@@ -46,7 +46,7 @@ export default {
   methods: {
     async getAllDataProducto(producto) {
       await axios
-        .get(`${this.$api}productos/${producto}`)
+        .get(this.$api + "productos/" + producto)
         .then((res) => {
           this.producto = res.data.data;
         })
