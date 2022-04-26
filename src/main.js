@@ -5,7 +5,7 @@ import store from "./store";
 import vuetify from "./plugins/vuetify";
 Vue.config.productionTip = false;
 
-Vue.prototype.$api = "http://127.0.0.1:8000/api/";
+Vue.prototype.$api = process.env.VUE_APP_ROOT_API;
 
 new Vue({
   router,

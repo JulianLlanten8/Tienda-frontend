@@ -7,8 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "vue-cli-service serve",
-    "deployG": "deploy.sh",
-    "deploy": "vue-cli-service build"
+    "deploy": "deploy.sh",
+    "production": "vue-cli-service serve --mode production"
   },
   "dependencies": {
     "axios": "^0.26.1",
