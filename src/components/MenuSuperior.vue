@@ -23,7 +23,7 @@
 </template>
 <script>
 export default {
-  name: "Menu",
+  name: "MenuSuperior",
   data: () => ({}),
   methods: {
     irHome() {
