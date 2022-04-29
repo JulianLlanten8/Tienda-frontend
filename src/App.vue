@@ -3,7 +3,9 @@
     <Menu />
     <MenuSuperior />
     <v-main>
-      <router-view />
+      <v-scroll-x-transition>
+        <router-view />
+      </v-scroll-x-transition>
     </v-main>
   </v-app>
 </template>

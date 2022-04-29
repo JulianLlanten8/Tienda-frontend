@@ -1,4 +1,4 @@
-<template>
+<template v-once>
   <v-container fluid>
     <div class="d-flex align-center justify-end" width="300px">
       <v-spacer></v-spacer>
@@ -47,23 +47,6 @@ export default {
   data: () => ({
     buscar: "",
     productos: {},
-    cards: [
-      {
-        title: "Pre-fab homes",
-        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
-        flex: 12,
-      },
-      {
-        title: "Favorite road trips",
-        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
-        flex: 6,
-      },
-      {
-        title: "Best airlines",
-        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
-        flex: 6,
-      },
-    ],
   }),
 
   methods: {
@@ -71,7 +54,9 @@ export default {
       await axios
         .get(`${this.$api}productos`)
         .then((res) => {
-          this.productos = res.data.data;
+          const data = res.data.data;
+          this.$store.dispatch("setProductos", data);
+          this.productos = this.$store.getters.getProductos;
         })
         .catch((err) => {
           alert(err);
@@ -83,7 +68,11 @@ export default {
   },
 
   created() {
-    this.obtenerProductos();
+    if (Object.keys(this.productos) <= 0) {
+      this.obtenerProductos();
+    } /* else {
+      this.productos = this.$store.getters.getProductos;
+    } */
   },
 };
 </script>
