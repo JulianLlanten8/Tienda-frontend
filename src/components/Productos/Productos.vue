@@ -15,6 +15,18 @@
         width="200px"
       ></v-text-field>
     </div>
+    <v-row v-for="rows in 3" :key="rows.id">
+      <v-col v-for="item in 3" :key="item.id">
+        <v-skeleton-loader
+          v-if="loading"
+          :loading="loading"
+          class="mx-auto"
+          max-width="300"
+          type="card"
+        >
+        </v-skeleton-loader>
+      </v-col>
+    </v-row>
     <v-row dense>
       <v-col v-for="p in productos" :key="p.id" cols="4">
         <v-card>
@@ -47,10 +59,12 @@ export default {
   data: () => ({
     buscar: "",
     productos: {},
+    loading: false,
   }),
 
   methods: {
     async obtenerProductos() {
+      this.loading = true;
       await axios
         .get(`${this.$api}productos`)
         .then((res) => {
@@ -60,6 +74,9 @@ export default {
         })
         .catch((err) => {
           alert(err);
+        })
+        .finally(() => {
+          this.loading = false;
         });
     },
     irProducto(id) {
@@ -70,9 +87,9 @@ export default {
   created() {
     if (Object.keys(this.productos) <= 0) {
       this.obtenerProductos();
-    } /* else {
+    } else {
       this.productos = this.$store.getters.getProductos;
-    } */
+    }
   },
 };
 </script>

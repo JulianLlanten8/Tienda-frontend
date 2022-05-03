@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Menu from "@/components/Menu";
-import MenuSuperior from "@/components/MenuSuperior";
+import Menu from "@/components/layouts/Menu";
+import MenuSuperior from "@/components/layouts/MenuSuperior";
 
 export default {
   name: "App",
